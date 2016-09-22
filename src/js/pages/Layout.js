@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link, IndexLink } from 'react-router';
+
+import Footer from '../components/Footer';
+import Nav from '../components/Nav';
 
 export default class Layout extends React.Component {
-  navigate() {
-    this.props.history.pushState(null, 'settings');
-  }
-
   render() {
+    const containerStyle = {
+      marginTop: '60px'
+    };
     return (
       <div>
-        <h1>Killernewz</h1>
-        {this.props.children}
-        <Link to="archives" class="btn btn-default" activeClassName="btn-info">Archives</Link>
-        <IndexLink to="/" class="btn btn-default" activeClassName="btn-info">Featured</IndexLink>
-        <Link to="settings" class="btn btn-default" activeClassName="btn-info">Settings</Link>
+        <Nav />
+        <div class="container" style={containerStyle}>
+          <div class="row">
+            <div class="col-lg-12">
+              <h1>Killernewz</h1>
+              {this.props.children}
+            </div>
+          </div>
+          <Footer />
+        </div>
       </div>
     );
   };
