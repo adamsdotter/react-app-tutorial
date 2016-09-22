@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 export default class Layout extends React.Component {
   navigate() {
@@ -11,9 +11,9 @@ export default class Layout extends React.Component {
       <div>
         <h1>Killernewz</h1>
         {this.props.children}
-        <Link to="archived" class="btn btn-default">Archived</Link>
-        <Link to="/" class="btn btn-default">Featured</Link>
-        <button class="btn btn-default" onClick={this.navigate.bind(this)}>Settings</button>
+        <Link to="archives" class="btn btn-default" activeClassName="btn-info">Archives</Link>
+        <IndexLink to="/" class="btn btn-default" activeClassName="btn-info">Featured</IndexLink>
+        <Link to="settings" class="btn btn-default" activeClassName="btn-info">Settings</Link>
       </div>
     );
   };
