@@ -13,7 +13,7 @@ export default class Archives extends React.Component {
       'Stockholm',
       'Chrissy the cat',
       'Pig'
-    ].map((title, i) => <Article key={i} title={title} />);
+    ].map((title, i) => <Article key={i} title={title} href={`/#/archives/article-${i}`} />);
 
     const { article } = this.props.params;
     const articleName = article ? '(' + article + ')' : '';
